@@ -45,7 +45,12 @@ lvim.plugins = {
       require("leap").add_default_mappings()
     end,
   },
+  {
+    "voldikss/vim-translator",
+    config = function()
+      require("plugins.translator")
+    end
+  },
 }
 lvim.colorscheme = "solarized-osaka"
 require("plugins.dap")
-
