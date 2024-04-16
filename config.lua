@@ -51,6 +51,27 @@ lvim.plugins = {
       require("plugins.translator")
     end
   },
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = { 'kevinhwang91/promise-async' },
+    config = function()
+      --      require("plugins.ufo")
+    end
+  },
+  -- 多行编辑
+  {
+    "mg979/vim-visual-multi"
+  },
+  -- markdown 预览工具
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
 }
 lvim.colorscheme = "solarized-osaka"
 require("plugins.dap")
